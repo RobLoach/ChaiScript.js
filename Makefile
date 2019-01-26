@@ -35,6 +35,7 @@ wasm: dist/wasm
 
 html: dist/html
 	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) -s SINGLE_FILE=1 --shell-file src/chaiscript.html -s WASM=0 -o dist/html/index.html
+	cp node_modules/milligram/dist/milligram.min.css node_modules/milligram/dist/milligram.min.css.map dist/html
 
 build:
 	$(MAKE) OPTIMIZATION=-O2 all
