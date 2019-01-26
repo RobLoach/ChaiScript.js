@@ -1,0 +1,23 @@
+{
+  "name": "chaiscript",
+  "version": "1.0.0",
+  "description": "JavaScript port of ChaiScript, an easy to use embedded scripting language.",
+  "main": "index.js",
+  "scripts": {
+    "prepublishOnly": "emmake make build",
+    "test": "mocha",
+    "start": "http-server dist/html -o",
+    "emscripten": "emmake make"
+  },
+  "files": [
+    "dist/wasm/chaiscript.js",
+    "dist/chaiscript.js",
+    "index.js"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "http-server": "^0.11.1",
+    "mocha": "^5.2.0"
+  }
+}
