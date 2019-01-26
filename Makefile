@@ -34,7 +34,7 @@ wasm: dist/wasm
 	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) -s WASM=1 -s SINGLE_FILE=1 -o dist/wasm/chaiscript.js
 
 html: dist/html
-	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) --shell-file src/chaiscript.html -s WASM=0 -o dist/html/index.html
+	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) -s SINGLE_FILE=1 --shell-file src/chaiscript.html -s WASM=0 -o dist/html/index.html
 
 build:
 	$(MAKE) OPTIMIZATION=-O2 all
