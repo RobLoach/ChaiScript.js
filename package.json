@@ -7,7 +7,9 @@
     "prepublishOnly": "emmake make build",
     "test": "mocha",
     "start": "http-server dist/html -o",
-    "emscripten": "emmake make"
+    "emscripten": "emmake make",
+    "predeploy": "emmake make build",
+    "deploy": "gh-pages -d dist/html"
   },
   "files": [
     "dist/wasm/chaiscript.js",
@@ -17,6 +19,7 @@
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "gh-pages": "^2.0.1",
     "http-server": "^0.11.1",
     "mocha": "^5.2.0"
   }
