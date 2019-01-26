@@ -9,11 +9,9 @@ DEFINES = -std=c++1z \
 	-s DISABLE_EXCEPTION_CATCHING=0 \
 	--bind
 
-#-s EXPORT_NAME='chaiscript' \
-
 OPTIMIZATION := -O0
 
-all: native wasm html
+all: dist/chaiscript.js dist/wasm/chaiscript.js dist/html/index.html
 
 dist: vendor/ChaiScript/readme.md
 	mkdir -p dist
@@ -27,21 +25,20 @@ dist/html: dist
 vendor/ChaiScript/readme.md:
 	git submodule update --init
 
-native: dist
+dist/chaiscript.js: dist
 	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) -s WASM=0 -s SINGLE_FILE=1 -o dist/chaiscript.js
 
-wasm: dist/wasm
+dist/wasm/chaiscript.js: dist/wasm
 	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) -s WASM=1 -s SINGLE_FILE=1 -o dist/wasm/chaiscript.js
 
-html: dist/html
+dist/html/index.html: dist/html
 	em++ $(SOURCES) $(DEFINES) $(OPTIMIZATION) -s SINGLE_FILE=1 --shell-file src/chaiscript.html -s WASM=0 -o dist/html/index.html
-	cp node_modules/milligram/dist/milligram.min.css node_modules/milligram/dist/milligram.min.css.map dist/html
+	cp node_modules/milligram/dist/milligram.min.css node_modules/milligram/dist/milligram.min.css.map src/logo.png dist/html
 
 build:
 	$(MAKE) OPTIMIZATION=-O2 all
 
-# TODO: Add wasm test
-test: native wasm html
+test: dist/chaiscript.js
 	npm t
 
 clean:
