@@ -6,10 +6,10 @@
   "scripts": {
     "prepublishOnly": "emmake make build",
     "test": "mocha",
-    "prestart": "emmake make html",
+    "prestart": "emmake make dist/html/index.html",
     "start": "http-server dist/html -o",
     "emscripten": "emmake make",
-    "predeploy": "emmake make OPTIMIZATION=-O2 html",
+    "predeploy": "emmake make OPTIMIZATION=-O2 dist/html/index.html",
     "deploy": "gh-pages -d dist/html"
   },
   "homepage": "https://github.com/RobLoach/ChaiScript.js",
