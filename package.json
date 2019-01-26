@@ -8,7 +8,7 @@
     "test": "mocha",
     "start": "http-server dist/html -o",
     "emscripten": "emmake make",
-    "predeploy": "emmake make build",
+    "predeploy": "emmake make OPTIMIZATION=-O2 html",
     "deploy": "gh-pages -d dist/html"
   },
   "files": [
