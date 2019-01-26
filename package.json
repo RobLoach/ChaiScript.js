@@ -11,12 +11,18 @@
     "predeploy": "emmake make OPTIMIZATION=-O2 html",
     "deploy": "gh-pages -d dist/html"
   },
+  "homepage": "https://github.com/RobLoach/ChaiScript.js",
+  "repository": "github:RobLoach/ChaiScript.js",
+  "bugs": {
+    "url": "https://github.com/RobLoach/ChaiScript.js/issues"
+  },
+  "license": "BSD-3-Clause",
+  "author": "Rob Loach (https://robloach.net)",
   "files": [
     "dist/wasm/chaiscript.js",
     "dist/chaiscript.js",
     "index.js"
   ],
-  "author": "",
   "license": "MIT",
   "devDependencies": {
     "gh-pages": "^2.0.1",
