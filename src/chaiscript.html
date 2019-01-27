@@ -61,6 +61,7 @@ hello("World")</textarea>
       }
 
       function chaiScriptPostRun() {
+        runInput()
         var execute = document.getElementById('execute');
         execute.addEventListener("click", runInput);
       }
