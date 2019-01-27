@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
-    <title>ChaiScript</title>
+    <title>ChaiScript.js</title>
 
     <link rel="stylesheet" href="milligram.min.css" />
   </head>
@@ -22,8 +22,8 @@
     <div class="container">
       <div class="row">
         <div class="column">
-          <h1><img src="http://chaiscript.com/logo.png"> ChaiScript</h1>
-          <p><strong><a href="http://chaiscript.com/">ChaiScript</a></strong> is an easy to use embedded scripting language for C++. <a href="https://github.com/robloach/ChaiScript.js">ChaiScript.js</a> allows running ChaiScript through JavaScript.</p>
+          <h1><img src="logo.png"> ChaiScript</h1>
+          <p><strong><a href="http://chaiscript.com/">ChaiScript</a></strong> is an easy to use embedded scripting language for C++. <a href="https://github.com/robloach/ChaiScript.js">ChaiScript.js</a> allows running ChaiScript through JavaScript. See <a href="https://github.com/RobLoach/ChaiScript.js">the documentation</a> on how to use it.</p>
         </div>
       </div>
       <div class="row">
@@ -61,6 +61,7 @@ hello("World")</textarea>
       }
 
       function chaiScriptPostRun() {
+        runInput()
         var execute = document.getElementById('execute');
         execute.addEventListener("click", runInput);
       }
